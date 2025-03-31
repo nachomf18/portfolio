@@ -1,11 +1,55 @@
-<nav class="w-full">
-    <div class="mx-auto px-7 py-5 flex justify-between items-center">
-        <a href="/" class="text-2xl font-bold text-green transition duration-300 hover:scale-105 hover:-translate-x-1 hover:-translate-y-1">Ignacio</a>
+<nav class="fixed w-full">
+    <div class="mx-auto px-7 py-4 flex justify-between items-center text-green">
+        <a href="/" class="text-2xl font-bold transition duration-300 hover:scale-105 hover:-translate-x-1 hover:-translate-y-1">Ignacio</a>
         <div class="gap-10 flex items-center text-lightest-slate">
-            <a href="#about" class="transition duration-300 hover:-translate-y-1 hover:text-green">About</a>  
-            <a href="#experience" class="transition duration-300 hover:-translate-y-1 hover:text-green">Experience</a>
-            <a href="#projects" class="transition duration-300 hover:-translate-y-1 hover:text-green">Projects</a>
-            <a class="px-3 py-2 border border-green text-green rounded transition duration-300 hover:scale-105 hover:-translate-x-1 hover:-translate-y-1" href="/public/files/CV Ignacio Martin Es.pdf">Resume<a/>
+            <a href="#about" class="transition duration-300 hover:-translate-y-1 hover:text-green">Sobre mí</a>  
+            <a href="#experience" class="transition duration-300 hover:-translate-y-1 hover:text-green">Experiencia</a>
+            <a href="#projects" class="transition duration-300 hover:-translate-y-1 hover:text-green">Proyectos</a>
+            <a class="px-3 py-2 border border-green text-green rounded transition duration-300 hover:-translate-x-1 hover:-translate-y-1" href="/public/files/CV Ignacio Martin Es.pdf">Curriculum<a/>
         </div>
     </div>
 </nav>
+
+<style>
+    nav {
+        background: transparent;
+        animation: header-blur-scroll 0.3s linear both;
+        animation-timeline: scroll();
+        animation-range: 0% 100%;
+    }
+
+    @keyframes header-blur-scroll {
+        0% { 
+            backdrop-filter: blur(0px); 
+            background-color: transparent;
+        }
+        100% { 
+            backdrop-filter: blur(10px); 
+            border-bottom: var(--color-light-navy) 1px solid;
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('nav a[href^="#"]');
+
+        const options = {
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                navLinks.forEach(link => link.classList.remove('text-green', '-translate-y-1'));
+
+                const activeLink = document.querySelector(`a[href="#${entry.target.id}"]`);
+                if (activeLink) activeLink.classList.add('text-green', '-translate-y-1');
+            }
+            });
+        }, options);
+
+        sections.forEach(section => observer.observe(section));
+    });
+</script>
