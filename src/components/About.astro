@@ -1,36 +1,69 @@
-<div class="flex items-center justify-evenly space-x-6">
-    <img src="/imgs/nacho.jpg" alt="Ignacio Martín" class= "border-2 border-green rounded-lg w-70 h-70 object-cover object-center shadow-xl" />
-    <div class="flex flex-col items-end justify-center h-screen space-y-3">
-        <div class="flex items-center justify-center space-x-5">
-            <h1 class="text-4xl font-bold text-lightest-slate">Sobre mí</h1>
-            <span class="border-1 w-70 border-light-navy"></span>
-        </div>
-        <p class="font-light text-end text-slate">Soy un desarrollador web apasionado por crear aplicaciones modernas <br>
-            y eficientes. Me especializo en Astro, Node.js y Tailwind CSS. Siempre <br>
-            estoy aprendiendo nuevas tecnologías y mejorando mis habilidades para <br>
-            ofrecer productos de alta calidad.
-        </p>
-        <div class="grid grid-cols-2 gap-10 mt-8 items-center">
-            <div class="border border-green rounded-md shadow-lg p-4">
-                <h3 class="text-xl font-bold text-green">Frontend</h3>
-                <ul class="text-lightest-slate">
-                    <li>Astro</li>
-                    <li>HTML5</li>
-                    <li>CSS3 (TailwindCSS v4)</li>
-                    <li>JavaScript (ES6+)</li>
-                </ul>
+---
+import AstroSvg from '../assets/svg/astro.svg';
+import Node from '../assets/svg/node-js.svg';
+import Tailwind from '../assets/svg/tailwind.svg';
+import Spring from '../assets/svg/spring-boot.svg';
+import CSS3 from '../assets/svg/css3.svg';
+import HTML5 from '../assets/svg/html5.svg';
+import JS from '../assets/svg/javascript.svg';
+import MySQL from '../assets/svg/mysql.svg';
+import Firebase from '../assets/svg/firebase.svg';
+import Java from '../assets/svg/java.svg';
+import Android from '../assets/svg/android.svg';
+import AWS from '../assets/svg/aws.svg';
+---
+
+<section id="about">
+    <div id="about" class="flex items-center justify-evenly h-screen space-x-6">
+        <img src="/imgs/nacho.jpg" alt="Ignacio Martín" class= "opacity-75 border-2 border-green rounded-lg w-70 h-70 object-cover shadow-xl shadow-light-navy mb-50 transition duration-300 hover:-translate-y-1 hover:-translate-x-1 hover:opacity-100" />
+        <div class="flex flex-col items-end justify-center space-y-3">
+            <div class="flex items-center justify-center space-x-5">
+                <h1 class="text-4xl font-bold text-lightest-slate">Sobre mí</h1>
+                <span class="border-1 w-70 border-light-navy"></span>
             </div>
-            <div class="p-4 border border-green rounded-md shadow-lg items-center">
-                <h3 class="text-xl font-bold text-green">Backend</h3>
-                <ul class="text-lightest-slate">
-                    <li>Node.js</li>
-                    <li>Express</li>
-                    <li>Spring Boot</li>
-                    <li>Firebase Functions</li>
-                    <li>MySQL</li>
-                </ul>
+            <p class="font-light text-end text-slate">
+                Hola! Soy <strong class="text-green font-bold">Ignacio</strong> y me encanta crear aplicaciones y sitios web que ofrezcan experiencias 
+                únicas y funcionales. Mi interés por el desarrollo web empezó cuando comencé a experimentar con <strong>HTML, CSS y JavaScript</strong> para 
+                diseñar páginas atractivas y dinámicas. Desde entonces, he tenido la oportunidad de trabajar en diversos proyectos, desde prácticas 
+                desarrollando frontends con <strong>HTML, CSS y JavaScript</strong>, hasta implementar lógicas de servidor completas con 
+                <strong>Node.js, Firebase, y APIs como Stripe y SendGrid</strong>. 
+                También he desarrollado aplicaciones <strong>Android en Java</strong>, aplicando metodologías ágiles como SCRUM para organizar el trabajo en equipo. 
+                Actualmente, estoy enfocado en construir productos accesibles y eficientes, aplicando buenas prácticas tanto en frontend como en backend. 
+                Algunas tecnologías con las que he estado trabajando últimamente:
+            </p>
+            <div class="grid grid-cols-2 gap-20 mt-5 items-center">
+                <div class="border border-green rounded-md shadow-lg shadow-light-navy p-4 transition duration-300 hover:-translate-y-1">
+                    <h3 class="text-xl font-bold text-green text-center">Frontend</h3>
+                    <div class="grid grid-cols-3 gap-5 items-center p-4">
+                        <AstroSvg class="w-10 h-10"/>
+                        <JS class="w-9 h-9"/>
+                        <Tailwind class="w-10 h-10"/>
+                        <Android class="w-10 h-10"/>
+                        <HTML5 class="w-10 h-10"/>
+                        <CSS3 class="w-10 h-10"/>
+                    </div>
+                </div>
+                <div class="border border-green rounded-md shadow-lg items-center shadow-light-navy p-4 transition duration-300 hover:-translate-y-1">
+                    <h3 class="text-xl font-bold text-green text-center">Backend</h3>
+                    <div class="grid grid-cols-3 gap-5 items-center p-4">
+                        <Node class="w-10 h-10"/>
+                        <Spring class="w-9 h-9"/>
+                        <Java class="w-10 h-10"/>
+                        <MySQL class="w-12 h-12"/>
+                        <Firebase class="w-10 h-10"/>
+                        <AWS class="w-10 h-10"/>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</section>
+
+<style>
+    strong {
+    color: var(--color-white);
+    font-weight: 700;
+}
+</style>
+
 
