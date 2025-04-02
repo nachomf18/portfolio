@@ -1,11 +1,18 @@
+---
+import Code from '../assets/svg/code.svg'
+---
+
 <nav class="fixed w-full">
     <div class="mx-auto px-7 py-4 flex justify-between items-center text-green">
-        <a href="/" class="text-2xl font-bold transition duration-300 hover:scale-105 hover:-translate-x-1 hover:-translate-y-1">Ignacio</a>
+        <a href="/" class="transition duration-300 hover:scale-105 hover:-translate-x-1 hover:-translate-y-1">
+            <Code class="w-15 h-15"/>
+        </a>
         <div class="gap-10 flex items-center text-lightest-slate">
             <a href="#about" class="transition duration-300 hover:-translate-y-1 hover:text-green">Sobre mí</a>  
             <a href="#experience" class="transition duration-300 hover:-translate-y-1 hover:text-green">Experiencia</a>
             <a href="#projects" class="transition duration-300 hover:-translate-y-1 hover:text-green">Proyectos</a>
-            <a class="px-3 py-2 border border-green text-green rounded transition duration-300 hover:-translate-x-1 hover:-translate-y-1" href="/public/files/CV Ignacio Martin Es.pdf">Curriculum<a/>
+            <a class="px-3 py-2 border border-green text-green rounded transition duration-300 hover:-translate-x-1 hover:-translate-y-1 hover:bg-dark-green hover:border-dark-green" 
+            href="/public/files/CV Ignacio Martin Es.pdf">Curriculum<a/>
         </div>
     </div>
 </nav>
@@ -21,7 +28,8 @@
     @keyframes header-blur-scroll {
         0% { 
             backdrop-filter: blur(0px); 
-            background-color: transparent;
+            background-color: transparent
+            border-bottom: var(--color-light-navy) 1px solid;
         }
         100% { 
             backdrop-filter: blur(10px); 
