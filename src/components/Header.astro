@@ -11,7 +11,8 @@ import Code from '../assets/svg/code.svg'
             <a href="#about" class="transition duration-300 hover:-translate-y-1 hover:text-green">Sobre mí</a>  
             <a href="#experience" class="transition duration-300 hover:-translate-y-1 hover:text-green">Experiencia</a>
             <a href="#projects" class="transition duration-300 hover:-translate-y-1 hover:text-green">Proyectos</a>
-            <a class="px-3 py-2 border border-green text-green rounded transition duration-300 hover:-translate-x-1 hover:-translate-y-1 hover:bg-dark-green hover:border-dark-green" 
+            <a href="#Contacto" class="transition duration-300 hover:-translate-y-1 hover:text-green">Contacto</a>
+            <a class="px-3 py-2 border border-green text-green rounded transition duration-300 hover:shadow-box-sm hover:-translate-x-1 hover:-translate-y-1 hover:bg-dark-green hover:border-dark-green" 
             href="/public/files/CV Ignacio Martin Es.pdf">Curriculum<a/>
         </div>
     </div>
@@ -44,7 +45,7 @@ import Code from '../assets/svg/code.svg'
         const navLinks = document.querySelectorAll('nav a[href^="#"]');
 
         const options = {
-            threshold: 0.5
+            threshold: 0.8
         };
 
         const observer = new IntersectionObserver((entries) => {

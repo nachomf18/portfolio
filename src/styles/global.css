@@ -9,6 +9,7 @@
     --color-light-slate: #a8b2d1;
     --color-lightest-slate: #ccd6f6;
     --color-light-navy: #112240;
+    --color-navy: #0a192f;
 }
 
 @font-face {
@@ -41,6 +42,9 @@
 
 html {
     font-family: 'Fira Code', sans-serif;
+    scroll-behavior: smooth;
+    scrollbar-color: var(--color-light-navy) var(--color-navy);
+    scrollbar-width: thin;
 }
 
 @layer components {
@@ -49,6 +53,14 @@ html {
     }
 
     .card {
-        @apply bg-light-navy rounded-xl p-4 space-y-3;
+        @apply bg-light-navy rounded-md p-4 space-y-4 transition duration-300 hover:shadow-lg hover:-translate-y-1;
     }
+}
+
+@utility shadow-box-sm {
+    box-shadow: 2px 2px 0 0 var(--color-green); 
+}
+
+@utility shadow-box-lg {
+    box-shadow: 8px 8px 0 0 var(--color-green); 
 }
