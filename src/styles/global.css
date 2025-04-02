@@ -4,6 +4,7 @@
 @theme {
     --color-white: #e6f1ff;
     --color-green: #64ffda;
+    --color-dark-green: rgba(45, 212, 191, .1);
     --color-slate: #8892b0;
     --color-light-slate: #a8b2d1;
     --color-lightest-slate: #ccd6f6;
@@ -40,4 +41,14 @@
 
 html {
     font-family: 'Fira Code', sans-serif;
+}
+
+@layer components {
+    .skill {
+        @apply bg-dark-green py-2 px-3 rounded-3xl text-green text-sm;
+    }
+
+    .card {
+        @apply bg-light-navy rounded-xl p-4 space-y-3;
+    }
 }
