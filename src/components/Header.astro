@@ -1,64 +1,131 @@
 ---
-import Code from '../assets/svg/code.svg'
+import Code from '../assets/svg/code.svg';
+import Hamburger from '../assets/svg/hamburger.svg';
+import Cancel from '../assets/svg/cancel.svg';
 ---
-
-<nav class="fixed w-full max-xl:hidden">
-    <div class="px-7 pt-2 flex justify-between items-center text-green">
+<html>
+    <nav class="fixed w-full px-10 py-5 max-xl:px-7.5"> 
+    <ul class="max-lg:hidden flex items-center text-lightest-slate justify-end space-x-12">
+        <li class="first:mr-auto">
         <a href="/" class="transition duration-300 hover:scale-105 hover:-translate-x-1 hover:-translate-y-1">
-            <Code class="w-15 h-15"/>
+            <Code class="w-12 h-12" />
         </a>
-        <div class="gap-10 flex items-center text-lightest-slate">
-            <a href="#about" class="transition duration-300 hover:-translate-y-1 hover:text-green">Sobre mí</a>  
-            <a href="#experience" class="transition duration-300 hover:-translate-y-1 hover:text-green">Experiencia</a>
-            <a href="#projects" class="transition duration-300 hover:-translate-y-1 hover:text-green">Proyectos</a>
-            <a href="#contact" class="transition duration-300 hover:-translate-y-1 hover:text-green">Contacto</a>
-            <a class="px-3 py-2 border border-green text-green rounded transition duration-300 hover:shadow-box-sm hover:-translate-x-1 hover:-translate-y-1 hover:bg-dark-green hover:border-dark-green" 
-            href="/public/files/CV Ignacio Martin Es.pdf">Curriculum<a/>
-        </div>
-    </div>
-</nav>
+        </li>
+        <li><a href="#about" class="transition duration-300 hover:-translate-y-1 hover:text-green">Sobre mí</a></li>
+        <li><a href="#experience" class="transition duration-300 hover:-translate-y-1 hover:text-green">Experiencia</a></li>
+        <li><a href="#projects" class="transition duration-300 hover:-translate-y-1 hover:text-green">Proyectos</a></li>
+        <li><a href="#contact" class="transition duration-300 hover:-translate-y-1 hover:text-green">Contacto</a></li>
+        <li><a class="px-3 py-2 border border-green text-green rounded transition duration-300 hover:shadow-box-sm hover:-translate-x-1 hover:-translate-y-1 hover:bg-dark-green hover:border-dark-green" 
+        href="/public/files/CV Ignacio Martin Es.pdf">Curriculum</a></li>
+    </ul>
 
-<style>
-    nav {
-        background: transparent;
-        animation: header-blur-scroll 0.3s linear both;
-        animation-timeline: scroll();
-        animation-range: 0% 100%;
-    }
+    <ul class="max-lg:flex hidden text-lightest-slate">
+        <li class="first:mr-auto">
+            <a href="/" class="transition duration-300 hover:scale-105 hover:-translate-x-1 hover:-translate-y-1">
+            <Code class="w-15 h-15" />
+            </a>
+        </li>
+        <li onclick=showSideBar()>
+            <a href="#"><Hamburger class="w-12 h-12" /></a>
+        </li>
+    </ul>
 
-    @keyframes header-blur-scroll {
-        0% { 
-            backdrop-filter: blur(0px); 
-            background-color: transparent
-            box-shadow: none;
+    <div class="side-bar py-6 items-center text-lightest-slate">
+        <button onclick=hideSideBar() class="ml-50"><Cancel class="w-12 h-12"/></button>
+        <ul class="text-lightest-slate space-y-4 mt-20">
+            <li><a href="#about" class="transition duration-300 hover:-translate-y-1 hover:text-green">Sobre mí</a></li>
+            <li><a href="#experience" class="transition duration-300 hover:-translate-y-1 hover:text-green">Experiencia</a></li>
+            <li><a href="#projects" class="transition duration-300 hover:-translate-y-1 hover:text-green">Proyectos</a></li>
+            <li><a href="#contact" class="transition duration-300 hover:-translate-y-1 hover:text-green">Contacto</a></li>
+            <li><a class="px-3 py-2 border border-green text-green rounded transition duration-300 hover:shadow-box-sm hover:-translate-x-1 hover:-translate-y-1 hover:bg-dark-green hover:border-dark-green" 
+            href="/public/files/CV Ignacio Martin Es.pdf">Curriculum</a></li>
+        </ul>
+    </div> 
+    
+    </nav>
+
+
+    <style>
+        nav li {
+            height: 50px;
         }
-        100% { 
-            backdrop-filter: blur(10px); 
-            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    
+        nav a {
+            height: 100%;
+            display: flex;
+            align-items: center;
         }
-    }
-</style>
+    
+        .side-bar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 100vh;
+            z-index: 999;
+            background-color: var(--color-light-navy);
+            box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+            display: none;
+            flex-direction: column;
+        }
 
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('nav a[href^="#"]');
-
-        const options = {
-            threshold: 0.8
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                navLinks.forEach(link => link.classList.remove('text-green', '-translate-y-1'));
-
-                const activeLink = document.querySelector(`a[href="#${entry.target.id}"]`);
-                if (activeLink) activeLink.classList.add('text-green', '-translate-y-1');
+        .side-bar li {
+            height: 50px;
+            display: flex;
+        }
+    
+        nav {
+            background: transparent;
+            animation: header-blur-scroll 0.3s linear both;
+            animation-timeline: scroll();
+            animation-range: 0% 100%;
+        }
+    
+        @keyframes header-blur-scroll {
+            0% { 
+                backdrop-filter: blur(0px); 
+                background-color: transparent
+                box-shadow: none;
             }
-            });
-        }, options);
+            100% { 
+                backdrop-filter: blur(10px); 
+                box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+            }
+        }
+    </style>
+    
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav a[href^="#"]');
+    
+            const options = {
+                threshold: 0.8
+            };
+    
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navLinks.forEach(link => link.classList.remove('text-green', '-translate-y-1'));
+    
+                    const activeLink = document.querySelector(`a[href="#${entry.target.id}"]`);
+                    if (activeLink) activeLink.classList.add('text-green', '-translate-y-1');
+                }
+                });
+            }, options);
+    
+            sections.forEach(section => observer.observe(section));
+        });
+    
+        function showSideBar() {
+            const sideBar = document.querySelector('.side-bar');
+            sideBar.style.display = 'flex';
+        }
 
-        sections.forEach(section => observer.observe(section));
-    });
-</script>
+        function hideSideBar() {
+            const sideBar = document.querySelector('.side-bar');
+            sideBar.style.display = 'none';
+        }
+    </script>
+</html>
+
