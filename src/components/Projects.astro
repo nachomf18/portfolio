@@ -4,19 +4,19 @@ import Link from "../assets/svg/link.svg";
 ---
 
 <section id="projects">
-    <div id="projects" class="hidden flex flex-col items-center justify-center h-screen w-full">
+    <div id="projects" class="flex flex-col items-center justify-center h-screen w-full">
         <h1 class="text-4xl font-bold text-lightest-slate">Proyectos</h1>
 
-        <div class="flex items-center justify-evenly space-x-5 mt-8">  
+        <div class="grid grid-cols-2 mt-8 gap-2 max-xl:grid-cols-1">  
 
             <div class="card group">
-                <div class="flex justify-end space-x-2">
-                    <img src="" alt="">
-                    <Link class="w-6 h-6 text-slate" />
+                <div class="flex justify-between space-x-2">
+                    <img src="./public/imgs/nacho.jpg" class="w-10 h-10" alt="">
+                    <a href=""><Link class="w-6 h-6 text-slate"/></a>
                 </div>
                 <h1 class="text-xl text-light-slate font-bold transition duration-300 group-hover:text-green">Repeat Packaging</h1>
                 <p class="text-sm text-slate font-light">Hola buenas tardes tengo cancer en las rodillas y me gutsa mucho comer pitos de mono</p>
-                <div class="flex items-center justify-center mt-4 space-x-2.5">
+                <div class="max-xl:items-center max-xl:justify-center flex items-start mt-4 gap-1">
                     <p class="skill">JavaScript<p/>
                     <p class="skill">Node.js<p/>
                     <p class="skill">Firebase<p/>
@@ -24,14 +24,13 @@ import Link from "../assets/svg/link.svg";
             </div>
 
             <div class="card group">
-                <div class="flex justify-end space-x-2">
+                <div class="flex justify-between space-x-2">
                     <img src="" alt="">
-                    <GitHub class="w-6 h-6 text-slate" />
-                    <Link class="w-6 h-6 text-slate" />
+                    <a href=""><GitHub class="w-6 h-6 text-slate" /></a>
                 </div>
                 <h1 class="text-xl text-light-slate font-bold transition duration-300 group-hover:text-green">Armonia Skills</h1>
                 <p class="text-sm text-slate font-light">Hola buenas tardes tengo cancer en las rodillas y me gutsa mucho comer pitos de mono</p>
-                <div class="flex items-center justify-center mt-4 space-x-2.5">
+                <div class="max-xl:items-center max-xl:justify-center flex items-start mt-4 gap-1">
                     <p class="skill">JavaScript<p/>
                     <p class="skill">Node.js<p/>
                     <p class="skill">Firebase<p/>
@@ -39,14 +38,30 @@ import Link from "../assets/svg/link.svg";
             </div>
 
             <div class="card group">
-                <div class="flex justify-end space-x-2">
-                    <img src="" alt="">
-                    <GitHub class="w-6 h-6 text-slate" />
-                    <Link class="w-6 h-6 text-slate" />
+                <div class="flex justify-between space-x-2">
+                    <img src="./public/imgs/nacho.jpg" class="w-10 h-10" alt="">
+                    <a href="" class=""><GitHub class="w-6 h-6 text-slate" /></a>
                 </div>
                 <h1 class="text-xl text-light-slate font-bold transition duration-300 group-hover:text-green">Armonia Bills</h1>
                 <p class="text-sm text-slate font-light">Hola buenas tardes tengo cancer en las rodillas y me gutsa mucho comer pitos de mono</p>
-                <div class="flex items-center justify-center mt-4 space-x-2.5">
+                <div class="max-xl:items-center max-xl:justify-center flex items-start mt-4 gap-1">
+                    <p class="skill">JavaScript<p/>
+                    <p class="skill">Node.js<p/>
+                    <p class="skill">Firebase<p/>
+                </div>
+            </div>
+
+            <div class="card group">
+                <div class="flex justify-between space-x-2">
+                    <img src="./public/imgs/nacho.jpg" class="w-10 h-10" alt="">
+                    <div class="flex space-x-2">
+                        <a href=""><GitHub class="w-6 h-6 text-slate" /></a>
+                        <a href=""><Link class="w-6 h-6 text-slate" /></a>
+                    </div>
+                </div>
+                <h1 class="text-xl text-light-slate font-bold transition duration-300 group-hover:text-green">Portfolio</h1>
+                <p class="text-sm text-slate font-light">Hola buenas tardes tengo cancer en las rodillas y me gutsa mucho comer pitos de mono</p>
+                <div class="max-xl:items-center max-xl:justify-center flex items-start mt-4 gap-1">
                     <p class="skill">JavaScript<p/>
                     <p class="skill">Node.js<p/>
                     <p class="skill">Firebase<p/>
