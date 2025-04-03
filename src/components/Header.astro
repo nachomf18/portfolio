@@ -2,8 +2,8 @@
 import Code from '../assets/svg/code.svg'
 ---
 
-<nav class="fixed w-full">
-    <div class="mx-auto px-7 py-4 flex justify-between items-center text-green">
+<nav class="fixed w-full max-xl:hidden">
+    <div class="px-7 pt-2 flex justify-between items-center text-green">
         <a href="/" class="transition duration-300 hover:scale-105 hover:-translate-x-1 hover:-translate-y-1">
             <Code class="w-15 h-15"/>
         </a>
@@ -11,7 +11,7 @@ import Code from '../assets/svg/code.svg'
             <a href="#about" class="transition duration-300 hover:-translate-y-1 hover:text-green">Sobre mí</a>  
             <a href="#experience" class="transition duration-300 hover:-translate-y-1 hover:text-green">Experiencia</a>
             <a href="#projects" class="transition duration-300 hover:-translate-y-1 hover:text-green">Proyectos</a>
-            <a href="#Contacto" class="transition duration-300 hover:-translate-y-1 hover:text-green">Contacto</a>
+            <a href="#contact" class="transition duration-300 hover:-translate-y-1 hover:text-green">Contacto</a>
             <a class="px-3 py-2 border border-green text-green rounded transition duration-300 hover:shadow-box-sm hover:-translate-x-1 hover:-translate-y-1 hover:bg-dark-green hover:border-dark-green" 
             href="/public/files/CV Ignacio Martin Es.pdf">Curriculum<a/>
         </div>
@@ -30,11 +30,11 @@ import Code from '../assets/svg/code.svg'
         0% { 
             backdrop-filter: blur(0px); 
             background-color: transparent
-            border-bottom: var(--color-light-navy) 1px solid;
+            box-shadow: none;
         }
         100% { 
             backdrop-filter: blur(10px); 
-            border-bottom: var(--color-light-navy) 1px solid;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
         }
     }
 </style>
